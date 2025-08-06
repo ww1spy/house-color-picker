@@ -6,8 +6,7 @@ const overlays = {
 };
 
 function setOverlayColor(id, color) {
-  overlays[id].style.filter = `brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%) drop-shadow(0 0 0 ${color})`;
-  overlays[id].style.webkitFilter = overlays[id].style.filter;
+  overlays[id].style.backgroundColor = color;
 }
 
 document.getElementById('sidingColor').addEventListener('input', e => setOverlayColor('siding', e.target.value));
@@ -15,7 +14,7 @@ document.getElementById('trimColor').addEventListener('input', e => setOverlayCo
 document.getElementById('doorColor').addEventListener('input', e => setOverlayColor('door', e.target.value));
 document.getElementById('shuttersColor').addEventListener('input', e => setOverlayColor('shutters', e.target.value));
 
-// Initialize default colors
+// Initialize default colors on page load
 ['siding', 'trim', 'door', 'shutters'].forEach(id => {
   const colorInput = document.getElementById(id + 'Color');
   setOverlayColor(id, colorInput.value);
