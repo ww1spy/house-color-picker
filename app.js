@@ -5,24 +5,24 @@ const overlays = {
   shutters: document.getElementById('shutters')
 };
 
-function setTintColor(id, color) {
-  document.getElementById(`${id}Tint`).style.backgroundColor = color;
-}
-
-document.getElementById('sidingColor').addEventListener('input', e =>
-  setTintColor('siding', e.target.value)
-);
-
 function setOverlayColor(id, color) {
   overlays[id].style.backgroundColor = color;
 }
 
-document.getElementById('sidingColor').addEventListener('input', e => setOverlayColor('siding', e.target.value));
-document.getElementById('trimColor').addEventListener('input', e => setOverlayColor('trim', e.target.value));
-document.getElementById('doorColor').addEventListener('input', e => setOverlayColor('door', e.target.value));
-document.getElementById('shuttersColor').addEventListener('input', e => setOverlayColor('shutters', e.target.value));
+document.getElementById('sidingColor').addEventListener('input', e =>
+  setOverlayColor('siding', e.target.value)
+);
+document.getElementById('trimColor').addEventListener('input', e =>
+  setOverlayColor('trim', e.target.value)
+);
+document.getElementById('doorColor').addEventListener('input', e =>
+  setOverlayColor('door', e.target.value)
+);
+document.getElementById('shuttersColor').addEventListener('input', e =>
+  setOverlayColor('shutters', e.target.value)
+);
 
-// Initialize default colors on page load
+// Initialize with default colors
 ['siding', 'trim', 'door', 'shutters'].forEach(id => {
   const colorInput = document.getElementById(id + 'Color');
   setOverlayColor(id, colorInput.value);
