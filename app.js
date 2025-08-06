@@ -5,6 +5,14 @@ const overlays = {
   shutters: document.getElementById('shutters')
 };
 
+function setTintColor(id, color) {
+  document.getElementById(`${id}Tint`).style.backgroundColor = color;
+}
+
+document.getElementById('sidingColor').addEventListener('input', e =>
+  setTintColor('siding', e.target.value)
+);
+
 function setOverlayColor(id, color) {
   overlays[id].style.backgroundColor = color;
 }
