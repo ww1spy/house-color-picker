@@ -39,6 +39,6 @@ h1 {
   background-repeat: no-repeat;
   background-position: center;
   pointer-events: none;
-  mix-blend-mode: overlay;
+  mix-blend-mode: multiply;
   opacity: 1;
 }
