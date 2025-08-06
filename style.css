@@ -6,15 +6,22 @@ body {
   padding: 1em;
 }
 
+h1 {
+  margin-bottom: 0.5em;
+}
+
 .picker-container {
   margin-bottom: 1em;
   display: flex;
+  flex-wrap: wrap;
   gap: 1em;
+  justify-content: center;
 }
 
 .house-wrapper {
   position: relative;
   max-width: 800px;
+  width: 100%;
 }
 
 .house-wrapper img.house-base {
@@ -27,8 +34,11 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  mix-blend-mode: multiply; /* keeps texture visible */
-  opacity: 1;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   pointer-events: none;
+  mix-blend-mode: multiply;
+  opacity: 1;
 }
-
