@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>House Color Picker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>House Color Picker</h1>
+  
+  <div class="picker-container">
+    <label>Siding: <input type="color" id="sidingColor" value="#c0c0c0"></label>
+    <label>Trim: <input type="color" id="trimColor" value="#ffffff"></label>
+    <label>Door: <input type="color" id="doorColor" value="#8b0000"></label>
+    <label>Shutters: <input type="color" id="shuttersColor" value="#333333"></label>
+  </div>
+  
+  <div class="house-wrapper">
+    <img src="house-base.jpg" class="house-base" alt="House" />
+    <img src="siding.png" class="overlay" id="siding" alt="Siding" />
+    <img src="trim.png" class="overlay" id="trim" alt="Trim" />
+    <img src="door.png" class="overlay" id="door" alt="Door" />
+    <img src="shutters.png" class="overlay" id="shutters" alt="Shutters" />
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
