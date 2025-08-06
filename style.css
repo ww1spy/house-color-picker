@@ -1,0 +1,33 @@
+body {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+}
+
+.picker-container {
+  margin-bottom: 1em;
+  display: flex;
+  gap: 1em;
+}
+
+.house-wrapper {
+  position: relative;
+  max-width: 800px;
+}
+
+.house-wrapper img.house-base {
+  width: 100%;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  mix-blend-mode: multiply;
+  opacity: 0.8;
+  pointer-events: none;
+}
