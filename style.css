@@ -27,7 +27,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  mix-blend-mode: color;
+  mix-blend-mode: overlay;
   opacity: 0.8;
   pointer-events: none;
 }
