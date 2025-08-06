@@ -6,23 +6,15 @@ body {
   padding: 1em;
 }
 
-h1 {
-  margin-bottom: 0.5em;
-}
-
 .picker-container {
   margin-bottom: 1em;
   display: flex;
-  flex-wrap: wrap;
   gap: 1em;
-  justify-content: center;
 }
 
 .house-wrapper {
   position: relative;
   max-width: 800px;
-  width: 100%;
-  isolation: isolate; /* ensures blend mode stays within this container */
 }
 
 .house-wrapper img.house-base {
@@ -35,11 +27,7 @@ h1 {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  mix-blend-mode: color;
+  opacity: 0.8;
   pointer-events: none;
-  mix-blend-mode: multiply; /* NEW: applies color without darkening */
-  opacity: 1;
 }
