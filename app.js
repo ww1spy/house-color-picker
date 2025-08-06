@@ -7,8 +7,6 @@ const overlays = {
 
 function setOverlayColor(id, color) {
   overlays[id].style.backgroundColor = color;
-  overlays[id].style.mixBlendMode = 'multiply';
-  overlays[id].style.opacity = '1';
 }
 
 document.getElementById('sidingColor').addEventListener('input', e => setOverlayColor('siding', e.target.value));
@@ -16,7 +14,7 @@ document.getElementById('trimColor').addEventListener('input', e => setOverlayCo
 document.getElementById('doorColor').addEventListener('input', e => setOverlayColor('door', e.target.value));
 document.getElementById('shuttersColor').addEventListener('input', e => setOverlayColor('shutters', e.target.value));
 
-// Initialize default colors
+// Initialize default colors on page load
 ['siding', 'trim', 'door', 'shutters'].forEach(id => {
   const colorInput = document.getElementById(id + 'Color');
   setOverlayColor(id, colorInput.value);
