@@ -40,6 +40,6 @@ h1 {
   background-repeat: no-repeat;
   background-position: center;
   pointer-events: none;
-  mix-blend-mode: color; /* NEW: applies color without darkening */
+  mix-blend-mode: multiply; /* NEW: applies color without darkening */
   opacity: 1;
 }
