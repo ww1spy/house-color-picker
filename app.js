@@ -6,8 +6,9 @@ const overlays = {
 };
 
 function setOverlayColor(id, color) {
-  overlays[id].style.filter = `brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%) drop-shadow(0 0 0 ${color})`;
-  overlays[id].style.webkitFilter = overlays[id].style.filter;
+  overlays[id].style.backgroundColor = color;
+  overlays[id].style.mixBlendMode = 'multiply';
+  overlays[id].style.opacity = '1';
 }
 
 document.getElementById('sidingColor').addEventListener('input', e => setOverlayColor('siding', e.target.value));
