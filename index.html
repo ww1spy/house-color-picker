@@ -17,26 +17,12 @@
   </div>
 
   <div class="house-wrapper">
-  <img src="house-base.png" class="house-base" alt="House" />
-
-  <div class="mask-layer" id="sidingLayer">
-    <div class="tint" id="sidingTint"></div>
-    <img src="siding.png" class="mask" />
+    <img src="house-base.png" class="house-base" alt="House" />
+    <div id="siding" class="overlay" style="background-image: url('siding.png')"></div>
+    <div id="trim" class="overlay" style="background-image: url('trim.png')"></div>
+    <div id="door" class="overlay" style="background-image: url('door.png')"></div>
+    <div id="shutters" class="overlay" style="background-image: url('shutters.png')"></div>
   </div>
-  <div class="mask-layer" id="trimLayer">
-    <div class="tint" id="trimTint"></div>
-    <img src="trim.png" class="mask" />
-  </div>
-  <div class="mask-layer" id="doorLayer">
-    <div class="tint" id="doorTint"></div>
-    <img src="door.png" class="mask" />
-  </div>
-  <div class="mask-layer" id="shuttersLayer">
-    <div class="tint" id="shuttersTint"></div>
-    <img src="shutters.png" class="mask" />
-  </div>
-</div>
-
 
   <script src="app.js"></script>
 </body>
