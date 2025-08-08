@@ -10,18 +10,19 @@
   <h1>House Color Picker</h1>
 
   <div class="picker-container">
-    <label>Siding: <input type="color" id="sidingColor" value="#ffffff"></label>
+    <label>Siding: <input type="color" id="sidingColor" value="#d3d3d3"></label>
     <label>Trim: <input type="color" id="trimColor" value="#ffffff"></label>
-    <label>Door: <input type="color" id="doorColor" value="#ffffff"></label>
-    <label>Shutters: <input type="color" id="shuttersColor" value="#ffffff"></label>
+    <label>Door: <input type="color" id="doorColor" value="#8b0000"></label>
+    <label>Shutters: <input type="color" id="shuttersColor" value="#333333"></label>
   </div>
 
   <div class="house-wrapper">
     <img src="house-base.png" class="house-base" alt="House" />
-    <div id="siding" class="overlay" style="background-image:url('siding.png')"></div>
-    <div id="trim" class="overlay" style="background-image:url('trim.png')"></div>
-    <div id="door" class="overlay" style="background-image:url('door.png')"></div>
-    <div id="shutters" class="overlay" style="background-image:url('shutters.png')"></div>
+    <!-- Set the PNGs via CSS var so JS can swap easily -->
+    <div id="siding"   class="overlay" style="--overlay-image: url('siding.png');"></div>
+    <div id="trim"     class="overlay" style="--overlay-image: url('trim.png');"></div>
+    <div id="door"     class="overlay" style="--overlay-image: url('door.png');"></div>
+    <div id="shutters" class="overlay" style="--overlay-image: url('shutters.png');"></div>
   </div>
 
   <script src="app.js"></script>
