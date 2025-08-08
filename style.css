@@ -6,9 +6,7 @@ body {
   padding: 1em;
 }
 
-h1 {
-  margin-bottom: 0.5em;
-}
+h1 { margin-bottom: 0.5em; }
 
 .picker-container {
   margin-bottom: 1em;
@@ -29,16 +27,35 @@ h1 {
   display: block;
 }
 
-.overlay-mask {
-  position: absolute; inset: 0;
-  background: var(--overlay-color, #ffffff);
-  -webkit-mask-image: var(--mask-image);
-  mask-image: var(--mask-image);
+/* --- Overlay tint with blend, clipped to PNG alpha --- */
+.overlay {
+  position: absolute;
+  inset: 0;
+
+  /* Two background layers:
+     1) a solid color (gradient hack so we can store it in a var)
+     2) the actual PNG
+  */
+  background-image:
+    linear-gradient(var(--overlay-color, #ffffff), var(--overlay-color, #ffffff)),
+    var(--overlay-image);
+  background-repeat: no-repeat, no-repeat;
+  background-size: contain, contain;         /* or 100% 100% if you want hard stretch */
+  background-position: center, center;
+
+  /* This applies the tint while keeping highlights/shadows */
+  background-blend-mode: color;
+
+  /* Critical: clip everything to the PNG’s alpha so tint
+     doesn’t “paint” outside the shape. */
+  -webkit-mask-image: var(--overlay-image);
+  mask-image: var(--overlay-image);
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-size: contain;
   mask-size: contain;
   -webkit-mask-position: center;
   mask-position: center;
-  pointer-events: none;
+
+  pointer-events: none; /* let clicks pass through */
 }
