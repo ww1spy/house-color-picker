@@ -29,15 +29,16 @@ h1 {
   display: block;
 }
 
-/* one per overlay element */
-.overlay {
+.overlay-mask {
   position: absolute; inset: 0;
-  /* first layer = solid color, second = the PNG */
-  background-image: linear-gradient(var(--overlay-color, #ffffff), var(--overlay-color, #ffffff)),
-                    var(--overlay-image);
-  background-repeat: no-repeat, no-repeat;
-  background-size: contain, contain;   /* or '100% 100%' to stretch */
-  background-position: center, center;
-  background-blend-mode: color;        /* 'color' gives nice tints; try 'multiply' if you prefer */
+  background: var(--overlay-color, #ffffff);
+  -webkit-mask-image: var(--mask-image);
+  mask-image: var(--mask-image);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-position: center;
+  mask-position: center;
   pointer-events: none;
 }
