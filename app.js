@@ -5,8 +5,12 @@ const overlays = {
   shutters: document.getElementById('shutters')
 };
 
+function setOverlayImage(id, url) {
+  overlays[id].style.setProperty('--overlay-image', `url(${url})`);
+}
+
 function setOverlayColor(id, color) {
-  overlays[id].style.backgroundColor = color;
+  overlays[id].style.setProperty('--overlay-color', color);
 }
 
 document.getElementById('sidingColor').addEventListener('input', e => setOverlayColor('siding', e.target.value));
