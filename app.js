@@ -6,22 +6,28 @@ const overlays = {
 };
 
 function setOverlayImage(id, url) {
-  overlays[id].style.webkitMaskImage = `url(${url})`;
-  overlays[id].style.maskImage = `url(${url})`;
+  const el = overlays[id];
+  if (!el) return;
+  // Set the image once; we use it as both the visible layer and the mask
+  el.style.setProperty('--overlay-image', `url(${url})`);
 }
 
 function setOverlayColor(id, color) {
-  overlays[id].style.setProperty('--overlay-color', color);
+  const el = overlays[id];
+  if (!el) return;
+  el.style.setProperty('--overlay-color', color);
 }
 
-
+// Hook up color inputs
 document.getElementById('sidingColor').addEventListener('input', e => setOverlayColor('siding', e.target.value));
 document.getElementById('trimColor').addEventListener('input', e => setOverlayColor('trim', e.target.value));
 document.getElementById('doorColor').addEventListener('input', e => setOverlayColor('door', e.target.value));
 document.getElementById('shuttersColor').addEventListener('input', e => setOverlayColor('shutters', e.target.value));
 
-// Initialize default colors on page load
+// Initialize defaults on load
 ['siding', 'trim', 'door', 'shutters'].forEach(id => {
   const colorInput = document.getElementById(id + 'Color');
-  setOverlayColor(id, colorInput.value);
+  if (colorInput) setOverlayColor(id, colorInput.value);
 });
+
+// Optional: if you need to swap PNGs dynamically later, call setOverlayImage(id, newUrl)
